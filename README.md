@@ -5,7 +5,7 @@ Migration test
 
 This is the process I have found to be very helpful when migrating projects from their SVN repository over to Git. When migrating from one version control system to another it's important to retain as much information about the development history as possible (i.e., commit messages, tags, branches, etc.) and avoid the easy and tempting method of just downloading the project from a server and throw it into the new version control (you should only consider that if the project has never been in a version control system before).
 
-Key concepts:
+#Key concepts:
 
 tools for migrating svn repositories to git
 how to migrate standardized svn repositories
@@ -17,7 +17,7 @@ Tools for Migrating SVN to Git
 
 If you've Googled for how to migrate from svn to git then you've probably come across a lot of results and stack overflow questions/answers on how to do it and the common theme out there is to use Git's internal svn extension (git-svn) to do so. You've probably also seen references to the ruby gem svn2git that wraps git-svn and offers easy to use options to handle almost any scenario or state of discord your SVN repo may be in. I've utilized both approaches in the past and I must say that svn2git is way easier than the manual process of doing it all through git-svn. Github also highly recommends the use of svn2git to migrate projects over to git so just do it already.
 
-Install svn2git
+#Install svn2git
 
 First, you'll need to make sure you have git, git-svn and ruby installed on your system. If necessary, please refer to the installation instructions provided by svn2git's README file for more details.
 
@@ -67,7 +67,7 @@ wget https://gist.github.com/grafikchaos/5829233/raw/cd47916e5f0d30f6cf95bec67f5
 mv AAI_Magento.gitignore .gitignore
 Setup the project for git-flow
 
-The following series of commands will:
+#The following series of commands will:
 
 create the develop branch based off the master branch
 add the remote origin (Github in this case)
@@ -77,13 +77,13 @@ runs the git-flow initialization script (you can probably just leave the default
   $ git remote add origin git@github.com:<GITHUB_ACCOUNT>/<REPOSITORY_NAME>.git
   $ git push -u origin develop
   $ git flow init
-What to do with your old SVN repo?
+#What to do with your old SVN repo?
 
 Best practices for your now un-maintained SVN repository
 
 An orphaned repository is a headache just waiting to happen, especially if you work in a team or group environment. Either somebody will have a legacy checkout of the application and try to upload legacy files into your fresh and clean application or somebody will be confused as to what repo they should checkout and somebody WILL clone the SVN version instead of Git and waste their time and effort on a defunkt repo. You can avoid these headaches by wiping the SVN repo and committing a new README.txt to direct all those who are lost to the new repository location.
 
-The most efficient way I've found of wiping an SVN repo comes from this Stack Overflow answer. Essentially the process goes as follows:
+#The most efficient way I've found of wiping an SVN repo comes from this Stack Overflow answer. Essentially the process goes as follows:
 
   $ svn checkout --depth immediates http://myrepo.com/svn/myrepo myworking_copy
   $ cd myworking_copy
