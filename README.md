@@ -1,7 +1,7 @@
 # Sample-Migration
 Migration test
 
-Overview
+#Overview
 
 This is the process I have found to be very helpful when migrating projects from their SVN repository over to Git. When migrating from one version control system to another it's important to retain as much information about the development history as possible (i.e., commit messages, tags, branches, etc.) and avoid the easy and tempting method of just downloading the project from a server and throw it into the new version control (you should only consider that if the project has never been in a version control system before).
 
